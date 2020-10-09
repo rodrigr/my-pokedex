@@ -14,6 +14,11 @@ const routes = [
     path: '/pokedex',
     name: 'Pokedex',
     component: () => import('../views/Pokedex.vue')
+  },
+  {
+    path: '/detail/:order',
+    name: 'Detail',
+    component: () => import('../views/Detail.vue')
   }
 ]
 
