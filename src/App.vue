@@ -1,15 +1,12 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <!--  -->
+     
     <div class="wrapper">
+     
       <div class="red"></div>
       <div class="black">
-        <img src="./assets/my_pokedex_logo.png" alt="logo" id="logo">
-        
+        <!-- <img src="./assets/my_pokedex_logo.png" alt="logo" id="logo"> -->
+        <Navegador />
         <div class="circle left"></div>
         <div class="circle right"></div>
       </div>
@@ -22,6 +19,25 @@
   </div>
   
 </template>
+
+<script>
+import Navegador from './components/Navegador.vue'
+import {mapMutations} from 'vuex'
+
+export default {
+  name: 'App',
+  components: {
+    Navegador
+  },
+  methods:{
+    ...mapMutations(['listenResize'])
+  },
+  beforeMount(){
+    this.listenResize()
+  }
+}
+
+</script>
 
 <style lang="scss">
 #app {
@@ -36,6 +52,8 @@
   align-items: center;
   height: 100vh;
 }
+
+
 
 body{
   margin: 0;
@@ -69,10 +87,10 @@ body{
       width: 70%;
       position: relative;
 
-      #logo{
-        width: 150px;
-        margin-top: 1.5em;
-      }
+      // #logo{
+      //   width: 150px;
+      //   margin-top: 1.5em;
+      // }
 
       
 
