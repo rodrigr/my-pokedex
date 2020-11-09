@@ -33,7 +33,7 @@
           </router-link>
         </b-col>
         <b-col>
-        <router-link to="/pokedex">
+        <router-link to="/">
           <svg
             width="100px"
             height="100px"
@@ -56,7 +56,7 @@
       </b-row>
       <b-row>
         <b-col>
-          <router-link to="/pokedex">
+          <router-link to="/user">
             <svg
               width="100px"
               height="100px"

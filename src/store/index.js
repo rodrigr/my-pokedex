@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import firebase from "firebase/app";
+import "firebase/auth";
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    user: null,
     myPokemons: {},
     msg: 'Hello Pokedex',
     landscape: window.matchMedia("(min-width: 600px)").matches,
@@ -25,6 +28,15 @@ export default new Vuex.Store({
     },
     changeOrder(state,payload){
       state.selectedOrder = payload
+    },
+    listenUser(state){
+      firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+          state.user = user
+        } else {
+          state.user = null
+        }
+      });
     }
   },
   actions: {

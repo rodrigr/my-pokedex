@@ -30,10 +30,11 @@ export default {
     Navegador
   },
   methods:{
-    ...mapMutations(['listenResize'])
+    ...mapMutations(['listenResize','listenUser'])
   },
   beforeMount(){
     this.listenResize()
+    this.listenUser()
   }
 }
 
